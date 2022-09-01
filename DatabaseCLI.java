@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Scanner;
 
 public class DatabaseCLI {
@@ -40,7 +41,25 @@ public class DatabaseCLI {
             System.out.println("Error - Setting Fat Quarters to 0");
         }
 
-        Pattern pattern = new Pattern(name, designer, sizes, fatQuarter);
+        System.out.println("Enter Absolute Path of Image 1: ");
+        String img1 = sqan.nextLine();
+        File file = new File(img1);
+        while(!file.exists()) {
+            System.out.println("File Not Found\nEnter Absolute Path of Image 1");
+            img1 = sqan.nextLine();
+            file = new File(img1);
+        }
+
+        System.out.println("Enter Absolute Path of Image 2 (or N/A): ");
+        String img2 = sqan.nextLine();
+        file = new File(img2);
+        while(!file.exists() && !img2.equals("N/A")) {
+            System.out.println("File Not Found\nEnter Absolute Path of Image 2 (or N/A)");
+            img1 = sqan.nextLine();
+            file = new File(img1);
+        }
+
+        Pattern pattern = new Pattern(name, designer, sizes, fatQuarter, img1, img2);
         int res = database.add(pattern);
         if(res == 0) {
             return "Success";

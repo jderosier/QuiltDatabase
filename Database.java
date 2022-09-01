@@ -30,7 +30,7 @@ class Database {
                 String line = buffer.readLine();
                 while(line != null) {
                     String[] tokens = line.split(",");
-                    Pattern pattern = new Pattern(tokens[0],tokens[1], tokens[2], Integer.parseInt(tokens[3]));
+                    Pattern pattern = new Pattern(tokens[0],tokens[1], tokens[2], Integer.parseInt(tokens[3]), tokens[4], tokens[5]);
                     map.put(tokens[0], pattern);
                     line = buffer.readLine();
                 }
