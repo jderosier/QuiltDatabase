@@ -16,19 +16,19 @@ public class DatabaseCLI {
         System.out.print("Designer: ");
         String designer = sqan.nextLine();
 
-        System.out.print("Can the Pattern Make \nBaby (y/n): ");
+        System.out.print("Can the Pattern Make Baby (y/n): ");
         String sizes = sqan.nextLine();
-        System.out.print("Crib: ");
+        System.out.print("                     Crib: ");
         sizes += sqan.nextLine();
-        System.out.print("Throw: ");
+        System.out.print("                     Throw: ");
         sizes += sqan.nextLine();
-        System.out.print("Twin: ");
+        System.out.print("                     Twin: ");
         sizes += sqan.nextLine();
-        System.out.print("Full: ");
+        System.out.print("                     Full: ");
         sizes += sqan.nextLine();
-        System.out.print("Queen: ");
+        System.out.print("                     Queen: ");
         sizes += sqan.nextLine();
-        System.out.print("King: ");
+        System.out.print("                     King: ");
         sizes += sqan.nextLine();
 
         System.out.print("How Many Fat Quarters (or 0): ");
