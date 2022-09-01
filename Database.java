@@ -30,7 +30,7 @@ class Database {
                 String line = buffer.readLine();
                 while(line != null) {
                     String[] tokens = line.split(",");
-                    Pattern pattern = new Pattern(tokens[0],tokens[1]);
+                    Pattern pattern = new Pattern(tokens[0],tokens[1], tokens[2], Integer.parseInt(tokens[3]));
                     map.put(tokens[0], pattern);
                     line = buffer.readLine();
                 }
@@ -42,7 +42,7 @@ class Database {
         }
     }
 
-    public int addHelper(Pattern pattern) throws Exception{
+    public int addToFile(Pattern pattern) throws Exception{
         File tempFile = new File("temp.txt");
 
         BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -73,7 +73,7 @@ class Database {
         if(!map.containsKey(pattern.getName())) {
             map.put(pattern.getName(), pattern);
             try {
-                addHelper(pattern);
+                addToFile(pattern);
             }
             catch (Exception e) {
                 System.out.println(e);
@@ -85,7 +85,7 @@ class Database {
         return -1;
     }
 
-    private int removeHelper(Pattern pattern) throws Exception{
+    private int removeFromFile(Pattern pattern) throws Exception{
         File tempFile = new File("temp.txt");
 
         BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -115,7 +115,7 @@ class Database {
         if(this.map.containsKey(name)) {
             Pattern pattern = this.map.remove(name);
             try {
-                removeHelper(pattern);
+                removeFromFile(pattern);
             }
             catch (Exception e) {
                 System.out.println(e);
@@ -126,10 +126,37 @@ class Database {
         return -1;
     }
 
-    public HashSet<String> find(String toFind) {
+    public HashSet<String> findName(String toFind) {
         HashSet<String> set = new HashSet<String>();
         for(String key : map.keySet()) {
             if(key.contains(toFind)) {
+                set.add(key);
+            }
+        }
+        return set;
+    }
+    public HashSet<String> findDesigner(String toFind) {
+        HashSet<String> set = new HashSet<String>();
+        for(String key : map.keySet()) {
+            if(map.get(key).getDesigner().contains(toFind)) {
+                set.add(key);
+            }
+        }
+        return set;
+    }
+    public HashSet<String> findSize(String toFind) {
+        HashSet<String> set = new HashSet<String>();
+        for(String key : map.keySet()) {
+            if(map.get(key).canMakeSize(toFind)) {
+                set.add(key);
+            }
+        }
+        return set;
+    }
+    public HashSet<String> findFatQuarters(String toFind) {
+        HashSet<String> set = new HashSet<String>();
+        for(String key : map.keySet()) {
+            if(map.get(key).getFatQuarter() == Integer.parseInt(toFind)) {
                 set.add(key);
             }
         }
