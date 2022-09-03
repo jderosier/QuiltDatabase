@@ -122,26 +122,31 @@ public class DatabaseCLI {
     }
 
     public String find() {
-        System.out.println("n - Name\nd - Designer\ns - Size\nf - Fat Quarter");
+        System.out.println("n - Name\nd - Designer\ns - Size\nf - Free Text");
         System.out.print("Enter What Attribute to Search (h for help): ");
         String cmd = sqan.nextLine();
 
         String toFind = "";
         if(cmd.equals("n")) {
-            System.out.println("Enter Full or Part of Name: ");
+            System.out.print("Enter Full or Part of Name: ");
             toFind = sqan.nextLine();
             return database.findName(toFind).toString();
         }
         else if(cmd.equals("d")) {
-            System.out.println("Enter Full or Part of Designer: ");
+            System.out.print("Enter Full or Part of Designer: ");
             toFind = sqan.nextLine();
             return database.findDesigner(toFind).toString();
         }
         else if(cmd.equals("s")) {
             System.out.println("b - Baby\nc - Crib\nth - Throw\ntw - Twin\nf - Full\nq - Queen\nk - King");
-            System.out.println("Enter Size to Find: ");
-            toFind = sqan.nextLine();
+            System.out.print("Enter Size to Find: ");
+            toFind = sqan.nextLine().toLowerCase();
             return database.findSize(toFind).toString();
+        }
+        else if(cmd.equals("f")) {
+            System.out.print("Enter Free Text to Search For: ");
+            toFind = sqan.nextLine().toLowerCase();
+            return database.findFreeText(toFind).toString();
         }
         else {
             return "Invalid Search Query";
@@ -151,7 +156,7 @@ public class DatabaseCLI {
 
     public void startCLI() {
         System.out.print("Enter Command (or h for help): ");
-        String cmd = sqan.nextLine();
+        String cmd = sqan.nextLine().toLowerCase();
 
         while(!cmd.toLowerCase().equals("q")) {
             if(cmd.toLowerCase().equals("h")) {
@@ -173,7 +178,7 @@ public class DatabaseCLI {
                 System.out.println("Invalid Command (h for help menu)");
             }
             System.out.print("Enter Command: ");
-            cmd = sqan.nextLine();
+            cmd = sqan.nextLine().toLowerCase();
         }
         sqan.close();
         System.out.println("Bye!");

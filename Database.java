@@ -153,6 +153,15 @@ class Database {
         }
         return set;
     }
+    public HashSet<String> findFreeText(String toFind) {
+        HashSet<String> set = new HashSet<String>();
+        for(String key : map.keySet()) {
+            if(map.get(key).getFreeText().toLowerCase().contains(toFind)) {
+                set.add(key);
+            }
+        }
+        return set;
+    }
 
     public void listAll() {
         for(String name : map.keySet()) {
