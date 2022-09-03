@@ -18,28 +18,58 @@ public class DatabaseCLI {
         String designer = sqan.nextLine();
 
         System.out.print("Can the Pattern Make Baby (y/n): ");
-        String sizes = sqan.nextLine();
+        String sizeToAdd = sqan.nextLine();
+        String sizes = "";
+        if(sizeToAdd.toLowerCase().equals("y") || sizeToAdd.toLowerCase().equals("yes")) {
+            sizes += "y";
+        } else {
+            sizes += "n";
+        }
         System.out.print("                     Crib: ");
-        sizes += sqan.nextLine();
+        sizeToAdd = sqan.nextLine();
+        if(sizeToAdd.toLowerCase().equals("y") || sizeToAdd.toLowerCase().equals("yes")) {
+            sizes += "y";
+        } else {
+            sizes += "n";
+        }
         System.out.print("                     Throw: ");
-        sizes += sqan.nextLine();
+        sizeToAdd = sqan.nextLine();
+        if(sizeToAdd.toLowerCase().equals("y") || sizeToAdd.toLowerCase().equals("yes")) {
+            sizes += "y";
+        } else {
+            sizes += "n";
+        }
         System.out.print("                     Twin: ");
-        sizes += sqan.nextLine();
+        sizeToAdd = sqan.nextLine();
+        if(sizeToAdd.toLowerCase().equals("y") || sizeToAdd.toLowerCase().equals("yes")) {
+            sizes += "y";
+        } else {
+            sizes += "n";
+        }
         System.out.print("                     Full: ");
-        sizes += sqan.nextLine();
+        sizeToAdd = sqan.nextLine();
+        if(sizeToAdd.toLowerCase().equals("y") || sizeToAdd.toLowerCase().equals("yes")) {
+            sizes += "y";
+        } else {
+            sizes += "n";
+        }
         System.out.print("                     Queen: ");
-        sizes += sqan.nextLine();
+        sizeToAdd = sqan.nextLine();
+        if(sizeToAdd.toLowerCase().equals("y") || sizeToAdd.toLowerCase().equals("yes")) {
+            sizes += "y";
+        } else {
+            sizes += "n";
+        }
         System.out.print("                     King: ");
-        sizes += sqan.nextLine();
+        sizeToAdd = sqan.nextLine();
+        if(sizeToAdd.toLowerCase().equals("y") || sizeToAdd.toLowerCase().equals("yes")) {
+            sizes += "y";
+        } else {
+            sizes += "n";
+        }
 
-        System.out.print("How Many Fat Quarters (or 0): ");
-        int fatQuarter = 0;
-        try {
-            fatQuarter = Integer.parseInt(sqan.nextLine());
-        }
-        catch (Exception e) {
-            System.out.println("Error - Setting Fat Quarters to 0");
-        }
+        System.out.print("Free Text: ");
+        String freeText = sqan.nextLine();
 
         System.out.println("Enter Absolute Path of Image 1: ");
         String img1 = sqan.nextLine();
@@ -59,7 +89,7 @@ public class DatabaseCLI {
             file = new File(img1);
         }
 
-        Pattern pattern = new Pattern(name, designer, sizes, fatQuarter, img1, img2);
+        Pattern pattern = new Pattern(name, designer, sizes, freeText, img1, img2);
         int res = database.add(pattern);
         if(res == 0) {
             return "Success";
@@ -92,13 +122,9 @@ public class DatabaseCLI {
     }
 
     public String find() {
+        System.out.println("n - Name\nd - Designer\ns - Size\nf - Fat Quarter");
         System.out.print("Enter What Attribute to Search (h for help): ");
         String cmd = sqan.nextLine();
-        if(cmd.equals("h")) {
-            System.out.println("n - Name\nd - Designer\ns - Size\nf - Fat Quarter");
-            System.out.print("Enter What Attribute to Search (h for help): ");
-            cmd = sqan.nextLine();
-        }
 
         String toFind = "";
         if(cmd.equals("n")) {
@@ -112,18 +138,10 @@ public class DatabaseCLI {
             return database.findDesigner(toFind).toString();
         }
         else if(cmd.equals("s")) {
-            System.out.println("Enter Size to Find (h for help): ");
+            System.out.println("b - Baby\nc - Crib\nth - Throw\ntw - Twin\nf - Full\nq - Queen\nk - King");
+            System.out.println("Enter Size to Find: ");
             toFind = sqan.nextLine();
-            if(toFind.equals("h")) {
-                System.out.println("b - Baby\nc - Crib\nth - Throw\ntw - Twin\nf - Full\nq - Queen\nk - King");
-                toFind = sqan.nextLine();
-            }
             return database.findSize(toFind).toString();
-        }
-        else if(cmd.equals("d")) {
-            System.out.println("Enter # of Fat Quarters: ");
-            toFind = sqan.nextLine();
-            return database.findName(toFind).toString();
         }
         else {
             return "Invalid Search Query";

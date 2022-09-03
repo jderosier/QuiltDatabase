@@ -2,15 +2,15 @@ public class Pattern {
     private String name;
     private String designer;
     private String sizes;
-    private int fatQuarter;
+    private String freeText;
     private String img1;
     private String img2;
 
-    public Pattern(String name, String designer, String sizes, int fatQuarter, String img1, String img2) {
+    public Pattern(String name, String designer, String sizes, String freeText, String img1, String img2) {
         this.name = name;
         this.designer = designer;
         this.sizes = sizes;
-        this.fatQuarter = fatQuarter;
+        this.freeText = freeText;
         this.img1 = img1;
         this.img2 = img2;
     }
@@ -50,8 +50,8 @@ public class Pattern {
             return false;
         }
     }
-    public int getFatQuarter() {
-        return fatQuarter;
+    public String getFreeText() {
+        return freeText;
     }
     public String getImg1() {
         return img1;
@@ -60,8 +60,12 @@ public class Pattern {
         return img2;
     }
 
+    public String databaseString() {
+        return name + "," + designer + "," + sizes + "," + freeText + "," + img1 + "," + img2;
+    }
+
     @Override
     public String toString() {
-        return name + "," + designer + "," + sizes + "," + fatQuarter + "," + img1 + "," + img2;
+        return name + ", " + designer;
     }
 }
