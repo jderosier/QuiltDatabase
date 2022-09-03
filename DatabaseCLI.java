@@ -53,7 +53,7 @@ public class DatabaseCLI {
         System.out.println("Enter Absolute Path of Image 2 (or N/A): ");
         String img2 = sqan.nextLine();
         file = new File(img2);
-        while(!file.exists() && !img2.equals("N/A")) {
+        while((!file.exists()) && (!img2.equals("N/A"))) {
             System.out.println("File Not Found\nEnter Absolute Path of Image 2 (or N/A)");
             img1 = sqan.nextLine();
             file = new File(img1);
