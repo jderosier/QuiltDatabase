@@ -124,7 +124,7 @@ public class DatabaseCLI {
     public String find() {
         System.out.println("n - Name\nd - Designer\ns - Size\nf - Free Text");
         System.out.print("Enter What Attribute to Search (h for help): ");
-        String cmd = sqan.nextLine();
+        String cmd = sqan.nextLine().toLowerCase();
 
         String toFind = "";
         if(cmd.equals("n")) {
