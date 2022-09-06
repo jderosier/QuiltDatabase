@@ -62,75 +62,23 @@ body {
     left: 33%;
 }
 
-
-/* Create Presentation - Main Screen */
-.topic {
-    position: absolute;
-    top: 40%;
-}
-
-.pictures {
-    position: absolute;
-    top: 55%;
-}
-
-#none {
-    padding: 1%;
-}
-
-#titles {
-    padding: 1%;
-}
-
-#yeees {
-    padding: 1%;
-}
-
-.length {
-    position: absolute;
-    top: 30%;
-    right: 30%;
-}
-
-#short {
-    padding: 1%;
-}
-
-#medium {
-    padding: 1%;
-}
-
-#long {
-    padding: 1%;
-}
-
-.advanced {
-    position: absolute;
-    bottom: 10%;
-    right: 3%;
-}
-
-.create {
-    position: absolute;
-    bottom: 30%;
-    right: 30%;
-}
-
 /* Create Presentation - Advanced*/
 
-.additional {
+.name {
     position: absolute;
-    top: 40%;
-    width: 40%;
+    top: 25%;
+    width: 35%;
 }
 
-.info {
+.designer {
     position: absolute;
-    top: 55%;
+    top: 35%;
+    width: 35%;
 }
 
-#min {
-    padding: 1%;
+.sizes {
+    position: absolute;
+    top: 45%;
 }
 
 #med {
