@@ -3,7 +3,7 @@ import java.io.File;
 import java.util.Scanner;
 
 public class DatabaseCLI {
-    public static String FILE_PATH = "pattern_data.txt";
+    public static String FILE_PATH = "data/pattern_data.txt";
     private Database database;
     private Scanner sqan;
 
