@@ -81,32 +81,17 @@ body {
     top: 45%;
 }
 
-#med {
-    padding: 1%;
-}
-
-#dense {
-    padding: 1%;
-}
-
-.format {
+.free {
     position: absolute;
-    top: 55%;
-    right: 20%;
+    top: 25%;
+    right: 10%;
+    width: 35%;
 }
 
-#bullet {
-    padding: 2%;
-}
-
-#para {
-    padding: 2%;
-}
-
-.apply {
+.submit {
     position: absolute;
-    right: 40%;
     bottom: 10%;
+    right: 10%;
 }
 
 /* Loading */

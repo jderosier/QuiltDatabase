@@ -19,30 +19,57 @@
           Enter Attributes
         </h1>
       </div>
-      <form>
-        <input type="text" name="topic" value="Enter Name" class="name"></input>
-        <input type="text" name="topic" value="Enter Designer" class="designer"></input>
+      <form id="add_form">
+        <input type="text" name="name" value="Enter Name" class="name">
+        <input type="text" name="designer" value="Enter Designer" class="designer">
         <div class="sizes">
             <h6>What Sizes can it Make?</h6>
-            <input type="checkbox" id="baby" name="baby" value="baby">
+            <input type="checkbox" id="baby" value="n" onclick="switchValue(id, value)">
             <label for="baby">Baby</label><br>
-            <input type="checkbox" id="throw" name="throw" value="throw">
+            <input type="checkbox" id="throw" value="n" onclick="switchValue(id, value)">
             <label for="throw">Throw</label><br>
-            <input type="checkbox" id="twin" name="twin" value="twin">
+            <input type="checkbox" id="twin" value="n" onclick="switchValue(id, value)">
             <label for="twin">Twin</label><br>
-            <input type="checkbox" id="full" name="full" value="full">
+            <input type="checkbox" id="full" value="n" onclick="switchValue(id, value)">
             <label for="full">Full</label><br>
-            <input type="checkbox" id="queen" name="queen" value="queen">
+            <input type="checkbox" id="queen" value="n" onclick="switchValue(id, value)">
             <label for="queen">Queen</label><br>
-            <input type="checkbox" id="king" name="king" value="king">
+            <input type="checkbox" id="king" value="n" onclick="switchValue(id, value)">
             <label for="king">King</label><br>
         </div>
-        
+        <input type="text" name="free" value="Free Text" class="free">
 
 
-
+        <input type="submit" value="Submit" class="submit" onclick="sendData()">
       </form>
     </div>
+
+
+    <script>
+        function switchValue(id, value) {
+            if(value == 'y') {
+                document.getElementById(id).value = 'n';
+            }
+            else {
+                document.getElementById(id).value = 'y';
+            }
+        }
+
+        function sendData() {
+            const fs = require('fs')
+            var x = document.getElementById("add_form");
+            var text = "";
+            var i;
+            for (i = 0; i < x.length ;i++) {
+                text += x.elements[i].value + ",";
+            }
+            fs.writeFile("data\pattern_data.txt", text, (err) => {
+                if(err) alert("Error Adding Data")
+            })
+}
+
+    </script>
+
 
   </body>
 </html>
