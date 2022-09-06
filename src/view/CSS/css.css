@@ -5,15 +5,15 @@ body {
 }
 
 .big_div {
-    height: 80%;
-    width: 75%;
+    height: 50%;
+    width: 50%;
     border: 2px, solid, black;
     border-radius: 20px;
     background-color: lightgrey;
     padding: 50px;
-    position: fixed;
-    right: 12.5%;
-    top: 5%;
+    position: absolute;
+    right: 25%;
+    top: 10%;
 }
 
 .back {
@@ -25,23 +25,26 @@ body {
 
 /* Splash Screen */
 
-.logo {
-    height: 160px;
-    width: 256px;
+.splash_text {
+    position: absolute;
+    left: 25%;
+    top: 10%;
 }
 
-.start {
+.add {
     position: absolute;
     left: 13%;
     top: 50%;
-    height: 15%;
-    width: 15%;
+    height: 25%;
+    width: 30%;
 }
 
-.log_in {
+.view {
     position: absolute;
-    bottom: 10%;
-    left: 3%;
+    right: 13%;
+    top: 50%;
+    height: 25%;
+    width: 30%;
 }
 
 .log {
