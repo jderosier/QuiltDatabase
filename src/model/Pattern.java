@@ -1,3 +1,4 @@
+package src.model;
 public class Pattern {
     private String name;
     private String designer;

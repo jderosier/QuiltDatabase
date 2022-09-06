@@ -1,0 +1,176 @@
+/* Used Across Multiple Indices*/
+body {
+    background-color: rgb(69, 69, 69);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.big_div {
+    height: 80%;
+    width: 75%;
+    border: 2px, solid, black;
+    border-radius: 20px;
+    background-color: lightgrey;
+    padding: 50px;
+    position: fixed;
+    right: 12.5%;
+    top: 5%;
+}
+
+.back {
+    position: absolute;
+    bottom: 10%;
+    left: 3%;
+}
+
+
+/* Splash Screen */
+
+.logo {
+    height: 160px;
+    width: 256px;
+}
+
+.start {
+    position: absolute;
+    left: 13%;
+    top: 50%;
+    height: 15%;
+    width: 15%;
+}
+
+.log_in {
+    position: absolute;
+    bottom: 10%;
+    left: 3%;
+}
+
+.log {
+    width: 40%;
+    height: 80%;
+    border: 5px solid grey;
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+}
+
+.settings {
+    position: absolute;
+    bottom: 10%;
+    left: 33%;
+}
+
+
+/* Create Presentation - Main Screen */
+.topic {
+    position: absolute;
+    top: 40%;
+}
+
+.pictures {
+    position: absolute;
+    top: 55%;
+}
+
+#none {
+    padding: 1%;
+}
+
+#titles {
+    padding: 1%;
+}
+
+#yeees {
+    padding: 1%;
+}
+
+.length {
+    position: absolute;
+    top: 30%;
+    right: 30%;
+}
+
+#short {
+    padding: 1%;
+}
+
+#medium {
+    padding: 1%;
+}
+
+#long {
+    padding: 1%;
+}
+
+.advanced {
+    position: absolute;
+    bottom: 10%;
+    right: 3%;
+}
+
+.create {
+    position: absolute;
+    bottom: 30%;
+    right: 30%;
+}
+
+/* Create Presentation - Advanced*/
+
+.additional {
+    position: absolute;
+    top: 40%;
+    width: 40%;
+}
+
+.info {
+    position: absolute;
+    top: 55%;
+}
+
+#min {
+    padding: 1%;
+}
+
+#med {
+    padding: 1%;
+}
+
+#dense {
+    padding: 1%;
+}
+
+.format {
+    position: absolute;
+    top: 55%;
+    right: 20%;
+}
+
+#bullet {
+    padding: 2%;
+}
+
+#para {
+    padding: 2%;
+}
+
+.apply {
+    position: absolute;
+    right: 40%;
+    bottom: 10%;
+}
+
+/* Loading */
+
+.spinny {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 5rem;
+    height: 5rem;
+}
+
+/* Presentation */
+
+.ductTapeLogo {
+    height: 132px;
+    width: 100px;
+}
